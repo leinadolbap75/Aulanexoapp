@@ -1,0 +1,1 @@
+import{a as e,t}from"./utils-DhR3mn50.js";var n=e();function r({value:e,className:r}){let i=Math.max(0,Math.min(100,Math.round(e*100)));return(0,n.jsx)(`div`,{className:t(`h-1.5 overflow-hidden rounded-full bg-muted`,r),children:(0,n.jsx)(`div`,{className:`h-full rounded-full bg-primary transition-[width] duration-200 ease-out`,style:{width:`${i}%`}})})}export{r as t};

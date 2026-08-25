@@ -1,0 +1,1 @@
+import{t as e}from"./store-DlRmOkow.js";function t(){let t=e(e=>e.role),n=e(e=>e.familyStudentId),r=e(e=>e.students),i=t===`docente`,a=t===`familia`?r.filter(e=>e.id===n):r;return{role:t,canEdit:i,students:a,ids:new Set(a.map(e=>e.id)),familyStudentId:n,isFamily:t===`familia`}}export{t};

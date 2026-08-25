@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  --color-background: #f3efe6;
+  --color-foreground: #1c2320;
+  --color-card: #faf7f0;
+  --color-card-foreground: #1c2320;
+  --color-muted: #ede7da;
+  --color-muted-foreground: #5e6a64;
+  --color-primary: #1f4d45;
+  --color-primary-foreground: #f3efe6;
+  --color-secondary: #e7e0d2;
+  --color-secondary-foreground: #1c2320;
+  --color-accent: #2c6359;
+  --color-accent-foreground: #f3efe6;
+  --color-destructive: #8f2d2d;
+  --color-destructive-foreground: #faf7f0;
+  --color-border: #d9d0c0;
+  --color-input: #d9d0c0;
+  --color-ring: #1f4d45;
+  --color-ok: #2a5a3a;
+  --color-ok-foreground: #e8f1ea;
+  --color-warn: #8a5a12;
+  --color-warn-foreground: #f6edd9;
+  --color-info: #2c4a5c;
+  --color-info-foreground: #e4eef3;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 1.75rem;
+
+  --shadow-border:
+    0 0 0 1px rgb(28 35 32 / 0.06),
+    0 1px 2px -1px rgb(28 35 32 / 0.06),
+    0 2px 4px 0 rgb(28 35 32 / 0.04);
+  --shadow-border-hover:
+    0 0 0 1px rgb(28 35 32 / 0.08),
+    0 1px 2px -1px rgb(28 35 32 / 0.08),
+    0 2px 4px 0 rgb(28 35 32 / 0.06);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 22%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.shadow-border {
+  box-shadow: var(--shadow-border);
+}
+
+.enter-stagger > * {
+  animation: rise-in 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.enter-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.enter-stagger > *:nth-child(2) { animation-delay: 40ms; }
+.enter-stagger > *:nth-child(3) { animation-delay: 80ms; }
+.enter-stagger > *:nth-child(4) { animation-delay: 120ms; }
+.enter-stagger > *:nth-child(5) { animation-delay: 160ms; }
+.enter-stagger > *:nth-child(6) { animation-delay: 200ms; }
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+  main {
+    padding: 0 !important;
+  }
+}

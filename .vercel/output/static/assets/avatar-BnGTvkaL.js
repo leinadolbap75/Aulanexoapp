@@ -1,0 +1,1 @@
+import{a as e,n as t,t as n}from"./utils-DhR3mn50.js";var r=e();function i({name:e,className:i}){return(0,r.jsx)(`span`,{className:n(`inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary font-medium text-xs tracking-wide text-secondary-foreground`,i),children:t(e)})}export{i as t};
